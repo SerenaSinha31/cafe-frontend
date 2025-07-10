@@ -4,11 +4,12 @@ export default function Register() {
 
     const [user,setUser]=useState({})
     const [error, setError]=useState()
+    const API = import.meta.env.VITE_API_URL
 
     const handleSubmit =async()=>{
         try{
-            //const url="http://localhost:8080/api/users/register"
-            const url="https://cafe-backend-roan.vercel.app/api/users/register"
+            const url=`${API_URL}/api/users/register`
+            //const url="https://cafe-backend-roan.vercel.app/api/users/register"
             const result = await axios.post(url,user);
             setError("Registration successful!");
 
