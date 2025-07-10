@@ -23,7 +23,7 @@ export default function Register() {
 
   return (
     <div>
-        <h2>Registeration Form</h2>
+        <h2>Registration Form</h2>
         {error}
         <p>
             <input type="text"
