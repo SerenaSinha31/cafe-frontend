@@ -1,19 +1,14 @@
-// import React from 'react'
-
-// export default function Cart() {
-//   return (
-//     <div>Cart</div>
-//   )
-// }
-
 import React, { useState } from "react";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
+import axios from "axios";
 export default function Cart() {
   const { user, cart, setCart } = useContext(AppContext);
   const [orderValue, setOrderValue] = useState(0);
-  const Navigate = useNavigate()
+  const [error, setError] = useState();
+  const Navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_API_URL;
   const increment = (id, qty) => {
     const updatedCart = cart.map((product) =>
       product._id === id ? { ...product, qty: qty + 1 } : product
@@ -36,9 +31,28 @@ export default function Cart() {
     );
   }, [cart]);
 
+  const placeOrder = async () => {
+    try {
+      const url = `${API_URL}/api/orders`;
+      const newOrder = {
+        userId: user._id,
+        email: user.email,
+        orderValue,
+        items: cart,
+      };
+      const result = await axios.post(url, newOrder);
+      setCart([])
+      Navigate("/order");
+    } catch (err) {
+      console.log(err);
+      setError("Something went wrong");
+    }
+  };
+
   return (
     <div>
       <h2>My Cart</h2>
+      {error}
       {cart &&
         cart.map(
           (value) =>
@@ -59,7 +73,7 @@ export default function Cart() {
       <h5>Order Value:{orderValue}</h5>
       <p>
         {user?.token ? (
-          <button>Place Order</button>
+          <button onClick={placeOrder}>Place Order</button>
         ) : (
           <button onClick={() => Navigate("/login")}>Login to Order</button>
         )}

@@ -1,10 +1,3 @@
-// import React from 'react'
-
-// export default function Product() {
-//   return (
-//     <div>Product</div>
-//   )
-// }
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { AppContext } from "../App";
@@ -39,7 +32,7 @@ export default function Product() {
       {products &&
         products.map((product) => (
           <div key={product._id}>
-            <img src={`${API_URL}/product.imgUrl`} />
+            <img src={product.imgUrl} width={100}/>
             <h3>{product.productName}</h3>
             <p>{product.description}</p>
             <h4>{product.price}</h4>

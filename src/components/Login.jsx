@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { AppContext } from "../App";
 export default function Login() {
-  const [user, setUser] = useState({});
+  const {user, setUser} = useContext(AppContext);
   const [error, setError] = useState();
   const Navigate = useNavigate();
   const API_URL = import.meta.env.VITE_API_URL;
@@ -12,7 +13,7 @@ export default function Login() {
     try {
       const url = `${API_URL}/api/users/login`;
       const result = await axios.post(url, user);
-      setError("Welcome");
+      setUser(result.data);
       Navigate("/");
     } catch (err) {
       console.log(err);
