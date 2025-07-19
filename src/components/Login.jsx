@@ -13,7 +13,6 @@ export default function Login() {
     try {
       const url = `${API_URL}/api/users/login`;
       const result = await axios.post(url, user);
-      console.log(result.data);
       setUser(result.data);
       Navigate("/");
     } catch (err) {
