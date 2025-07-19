@@ -18,7 +18,7 @@ import "./App.css";
 export const AppContext = createContext();
 function App() {
   const [cart, setCart] = useState([]);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ role: "admin"});
   return (
     <div className="App-Container">
       <AppContext.Provider value={{ cart, setCart, user, setUser }}>
