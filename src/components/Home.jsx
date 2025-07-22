@@ -67,13 +67,13 @@ const sampleProducts = [
     id: 1,
     name: "Cappuccino",
     description: "Rich and foamy espresso drink.",
-    image: "/images/1.png",
+    image: "public/images/1.png",
   },
   {
     id: 2,
     name: "Latte",
     description: "Creamy milk with espresso shot.",
-    image: "/images/2.png",
+    image: "public/images/2.png",
   },
   {
     id: 3,
