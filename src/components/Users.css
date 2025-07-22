@@ -1,0 +1,178 @@
+.users-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.user-form input,
+.user-form select,
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.short-input {
+  width: 130px;
+  flex: none;
+}
+
+.user-form button,
+.search-bar button,
+.pagination button {
+  padding: 10px 16px;
+  background-color: #8e44ad;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.user-form .cancel-btn {
+  background-color: #aaa;
+}
+
+.user-form button:hover,
+.search-bar button:hover,
+.pagination button:hover {
+  background-color: #6c3483;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #555;
+}
+
+td button {
+  margin-right: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.error-msg {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Base button */
+button {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover effect */
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Form buttons */
+.user-form button {
+  background-color: #d63384; /* vibrant pink */
+  color: white;
+}
+
+.user-form button:hover {
+  background-color: #ad2167;
+}
+
+/* Cancel button */
+.cancel-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Edit button */
+td button:first-child {
+  background-color: #20c997; /* teal */
+  color: white;
+}
+
+td button:first-child:hover {
+  background-color: #17a589;
+}
+
+/* Delete button */
+td button:last-child {
+  background-color: #dc3545; /* red */
+  color: white;
+}
+
+td button:last-child:hover {
+  background-color: #bd2130;
+}
+
+/* Pagination buttons */
+.pagination button {
+  background-color: #6f42c1; /* purple */
+  color: white;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+

@@ -1,0 +1,235 @@
+/* body {
+  background: #f9f9fb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.products-title {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #2d2d2d;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.product-info {
+  padding: 1.2rem;
+}
+
+.product-info h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.product-info p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+  min-height: 48px;
+}
+
+.product-info h4 {
+  font-size: 1.1rem;
+  color: #2e8b57;
+  margin-bottom: 1rem;
+}
+
+.cart-btn {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #4a90e2, #357ab8);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  transition: background 0.3s ease;
+}
+
+.cart-btn:hover {
+  background: linear-gradient(135deg, #357ab8, #2e5d9f);
+}
+
+.load-more-container {
+  margin-top: 2.5rem;
+}
+
+.load-more-button {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.load-more-button:hover {
+  background: #444;
+}
+
+.error {
+  color: red;
+  margin-top: 1.5rem;
+  font-weight: 500;
+} */
+
+:root {
+  --pink: #f8bbd0;
+  --pink-dark: #ec407a;
+  --brown: #6d4c41;
+  --brown-light: #a1887f;
+  --bg-light: #fff9f9;
+  --text-dark: #4e342e;
+  --white: #ffffff;
+}
+
+.products-container {
+  padding: 3rem 2rem;
+  background-color: var(--bg-light);
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+.products-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--brown);
+  margin-bottom: 2.5rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.8rem;
+}
+
+.product-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.product-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-info h3 {
+  font-size: 1rem;
+  color: var(--brown);
+  margin-bottom: 0.4rem;
+}
+
+.product-info p {
+  color: var(--text-dark);
+  font-size: 0.88rem;
+  margin-bottom: 0.6rem;
+}
+
+.product-info h4 {
+  font-size: 1rem;
+  color: var(--pink-dark);
+  margin-bottom: 0.9rem;
+}
+
+.cart-btn {
+  background-color: var(--pink);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.cart-btn:hover {
+  background-color: var(--pink-dark);
+}
+
+.load-more-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.load-more-button {
+  background-color: var(--brown);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.load-more-button:hover {
+  background-color: var(--brown-light);
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}

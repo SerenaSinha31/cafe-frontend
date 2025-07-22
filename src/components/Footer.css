@@ -1,0 +1,19 @@
+/* Café-Inspired Theme for Footer */
+
+.footer {
+  background-color: #fcefee;
+  color: #5e3c3c;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 1px solid #e8d2c1;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+}
+
+.footer h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #a0522d;
+}

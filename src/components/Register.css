@@ -1,0 +1,65 @@
+/* Café-Inspired Theme for Register Page */
+
+.register-wrapper {
+  min-height: 100vh;
+  background-color: #fff6f4; /* light creamy pink */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.register-container {
+  background-color: #fff; /* clean white form box */
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register-container h2 {
+  margin-bottom: 1.5rem;
+  color: #5e3c3c; /* dark brown */
+  text-align: center;
+}
+
+.register-container input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #dcb0a3;
+  border-radius: 6px;
+  background-color: #fffaf9;
+  font-size: 1rem;
+  color: #5e3c3c;
+}
+
+.register-container input::placeholder {
+  color: #a67c7c;
+}
+
+.register-container button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #d18b81; /* soft brown pink */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-container button:hover {
+  background-color: #b97469;
+}
+
+.register-container .error-msg {
+  color: #c0392b;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}

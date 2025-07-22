@@ -1,0 +1,56 @@
+.order-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff8f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.order-container h3 {
+  text-align: center;
+  color: #6d4c41;
+  margin-bottom: 2rem;
+}
+
+.order-card {
+  background-color: #ffffff;
+  border: 1px solid #f8bbd0;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.order-card p {
+  margin: 0.3rem 0;
+  font-weight: 500;
+  color: #333;
+}
+
+.order-card hr {
+  margin-top: 1rem;
+  border: none;
+  height: 1px;
+  background-color: #f0cfdc;
+}
+
+.order-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.order-card th,
+.order-card td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #f0cfdc;
+  color: #4a4a4a;
+}
+
+.order-card th {
+  background-color: #f8bbd0;
+  color: #fff;
+  font-weight: bold;
+}

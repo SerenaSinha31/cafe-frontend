@@ -1,0 +1,44 @@
+:root {
+  --pink: #f8bbd0;
+  --pink-dark: #ec407a;
+  --brown: #6d4c41;
+  --brown-light: #a1887f;
+  --bg-light: #fff8f8;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-light);
+}
+
+.admin-nav {
+  background-color: var(--white);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid var(--pink);
+}
+
+.admin-nav a {
+  text-decoration: none;
+  color: var(--brown);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.admin-nav a:hover {
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+.admin-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}

@@ -1,0 +1,96 @@
+:root {
+  --pink: #f8bbd0;
+  --pink-dark: #ec407a;
+  --brown: #6d4c41;
+  --brown-light: #a1887f;
+  --bg-light: #fffafa;
+  --text-dark: #4e342e;
+  --white: #ffffff;
+}
+
+.orders-container {
+  background-color: var(--bg-light);
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.orders-container h2 {
+  color: var(--brown);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.orders-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.orders-controls select {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--brown-light);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: var(--white);
+  color: var(--text-dark);
+}
+
+.orders-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: auto;
+}
+
+.orders-list li {
+  background-color: var(--white);
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.order-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.order-actions button {
+  padding: 0.45rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.order-actions button:nth-child(1) {
+  background-color: #ffcccc;
+  color: #9b1c1c;
+}
+
+.order-actions button:nth-child(1):hover {
+  background-color: #e57373;
+}
+
+.order-actions button:nth-child(2) {
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+.order-actions button:nth-child(2):hover {
+  background-color: var(--pink-dark);
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+}

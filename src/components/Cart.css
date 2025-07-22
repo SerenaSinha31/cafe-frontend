@@ -1,0 +1,105 @@
+:root {
+  --pink: #f8bbd0;
+  --pink-dark: #ec407a;
+  --brown: #6d4c41;
+  --brown-light: #a1887f;
+  --bg-light: #fffafa;
+  --white: #ffffff;
+  --gray: #f5f5f5;
+}
+
+.cart-container {
+  background-color: var(--bg-light);
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  color: var(--brown);
+}
+
+.cart-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cart-item {
+  background-color: var(--white);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-details p {
+  margin: 0.2rem 0;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-controls button {
+  background-color: var(--pink);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.qty-controls button:hover {
+  background-color: var(--pink-dark);
+}
+
+.qty-controls span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--brown);
+}
+
+.total {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.action-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
+.action-button button {
+  background-color: var(--brown);
+  color: var(--white);
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-button button:hover {
+  background-color: var(--brown-light);
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
+}

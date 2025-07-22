@@ -1,101 +1,66 @@
 // import "./Register.css";
 // import { useRef } from "react";
-import { useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "./Register.css";
+
 export default function Register() {
-  const [user, setUser] = useState({});
-  const [error, setError] = useState();
-  const Navigate = useNavigate()
-  const API_URL = import.meta.env.VITE_API_URL
-  const handleSubmit = async () => {
+  const [form, setForm] = useState({});
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_API_URL;
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleRegister = async () => {
     try {
       const url = `${API_URL}/api/users/register`;
-      const result = await axios.post(url, user);
-      setError("Data saved successfully");
-      Navigate("/login")
+      const res = await axios.post(url, form);
+      if (res.status === 201 || res.status === 200) {
+        navigate("/login");
+      }
     } catch (err) {
-      console.log(err);
-      setError("Something went wrong");
+      console.error(err);
+      setError("Registration failed. Please check your details.");
     }
   };
+
   return (
-    <div className="App-Register-Row">
-      <div style={{ backgroundColor: "white" }}>
-        <h2>Registration Form</h2>
-        {error}
-        <p>
-          <input
-            type="text"
-            onChange={(e) => setUser({ ...user, firstName: e.target.value })}
-            placeholder="Enter First Name"
-          />
-        </p>
-        <p>
-          <input
-            type="text"
-            placeholder="Enter Last Name"
-            onChange={(e) => setUser({ ...user, lastName: e.target.value })}
-          />
-        </p>
-        <p>
-          <input
-            type="text"
-            placeholder="Enter Email Address"
-            onChange={(e) => setUser({ ...user, email: e.target.value })}
-          />
-        </p>
-        <p>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            onChange={(e) => setUser({ ...user, password: e.target.value })}
-          />
-        </p>
-        <p>
-          <button onClick={handleSubmit}>Submit</button>
-        </p>
-        <hr />
-      <Link to="/login">Already a member? Login Here...</Link>
+    <div className="register-wrapper">
+      <div className="register-container">
+        <h2>Create Account</h2>
+        {error && <p className="error-msg">{error}</p>}
+
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          onChange={handleChange}
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+        />
+
+        <button onClick={handleRegister}>Create Account</button>
       </div>
     </div>
   );
 }
-
-// export default function Register() {
-//   const firstName = useRef();
-//   const lastName = useRef();
-//   const email = useRef();
-//   const password = useRef();
-//   const handleSubmit = () => {
-//     const user = {
-//       firstName: firstName.current.value,
-//       lastName: lastName.current.value,
-//       email: email.current.value,
-//       password: password.current.value,
-//     };
-//     console.log(user);
-//   };
-//   return (
-//     <div className="App-Register-Row">
-//       <div style={{ backgroundColor: "white" }}>
-//         <h2>Registration Form</h2>
-//         <p>
-//           <input type="text" placeholder="Enter First Name" ref={firstName} />
-//         </p>
-//         <p>
-//           <input type="text" placeholder="Enter Last Name" ref={lastName} />
-//         </p>
-//         <p>
-//           <input type="text" placeholder="Enter Email Address" ref={email} />
-//         </p>
-//         <p>
-//           <input type="password" placeholder="Enter Password" ref={password} />
-//         </p>
-//         <p>
-//           <button onClick={handleSubmit}>Submit</button>
-//         </p>
-//       </div>
-//     </div>
-//   );
-// }
