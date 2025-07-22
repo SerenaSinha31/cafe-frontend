@@ -60,23 +60,45 @@
 //   );
 // }
 
-
 import "./Home.css";
 
+const sampleProducts = [
+  {
+    id: 1,
+    name: "Cappuccino",
+    description: "Rich and foamy espresso drink.",
+    image: "/images/1.png",
+  },
+  {
+    id: 2,
+    name: "Latte",
+    description: "Creamy milk with espresso shot.",
+    image: "/images/2.png",
+  },
+  {
+    id: 3,
+    name: "Espresso",
+    description: "Strong and bold single shot.",
+    image: "/images/3.png",
+  },
+];
+
 export default function Home() {
-  const handleClick = () => {
-    alert("Hello");
-  };
-
-  const handleSubmit = (name) => {
-    alert(`Hello ${name}`);
-  };
-
   return (
     <div className="home-container">
-      <h2>Welcome to the Cafe!</h2>
-      <button onClick={handleClick}>Click</button>
-      <button onClick={() => handleSubmit("John")}>Submit</button>
+      <div className="App-Home-Header">Welcome to Our Café</div>
+
+      <h2 className="home-title">Our Popular Drinks</h2>
+
+      <div className="product-grid">
+        {sampleProducts.map((product) => (
+          <div className="product-card" key={product.id}>
+            <img src={product.image} alt={product.name} />
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
