@@ -43,10 +43,6 @@
 //     </div>
 //   );
 // }
-
-
-
-
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { AppContext } from "../App";
@@ -63,9 +59,11 @@ export default function Product() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data } = await axios.get(`${API_URL}/api/products/all`);
+        const { data } = await axios.get(`${API_URL}/api/products/all?limit=1000`);
+        console.log("Fetched products:", data.products);
         setProducts(data.products);
       } catch (err) {
+        console.error(err);
         setError("Something went wrong while loading products.");
       }
     };
@@ -80,26 +78,42 @@ export default function Product() {
   };
 
   const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 4);
+    setVisibleCount((prev) => Math.min(products.length, prev + 4));
   };
 
   return (
     <div className="products-container">
       <h2 className="products-title">Our Products</h2>
+
+      <p style={{ textAlign: "center" }}>
+        Showing {Math.min(visibleCount, products.length)} of {products.length} products
+      </p>
+
       <div className="product-grid">
-        {products.slice(0, visibleCount).map((product) => (
-          <div className="product-card" key={product._id}>
-            <img src={product.imgUrl} alt={product.productName} />
-            <div className="product-info">
-              <h3>{product.productName}</h3>
-              <p>{product.description}</p>
-              <h4>₹{product.price}</h4>
-              <button className="cart-btn" onClick={() => addToCart(product)}>
-                <FaShoppingCart /> Add to Cart
-              </button>
+        {products.slice(0, visibleCount).map((product, index) => {
+          console.log("Rendering product:", index + 1, product.productName);
+          return (
+            <div
+              className="product-card"
+              key={product._id}
+              style={{ border: "2px solid red" }} // Optional: for debug
+            >
+              <img
+                src={product.imgUrl}
+                alt={product.productName}
+                onError={(e) => (e.target.style.display = "none")}
+              />
+              <div className="product-info">
+                <h3>{product.productName}</h3>
+                <p>{product.description}</p>
+                <h4>₹{product.price}</h4>
+                <button className="cart-btn" onClick={() => addToCart(product)}>
+                  <FaShoppingCart /> Add to Cart
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {visibleCount < products.length && (
@@ -114,3 +128,4 @@ export default function Product() {
     </div>
   );
 }
+
