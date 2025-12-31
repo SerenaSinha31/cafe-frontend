@@ -19,8 +19,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg", "robots.txt", "apple-touch-icon.png"],
       manifest: {
-        name: "CodeBrew Cafe",
-        short_name: "CodeBrew",
+        name: "SnaksSphere",
+        short_name: "SnaksSphere",
         description: "MERN Stack",
         theme_color: "#ffffff",
         icons: [
