@@ -33,7 +33,7 @@ export default function Header() {
 
   return (
     <div className="header">
-      <h1>SnackSphere</h1>
+      <h1>SnackSphere🥫</h1>
 
       <div className="header-nav">
         <Link to="/">Home</Link>
